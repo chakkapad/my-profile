@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        /* Navbar */
+        .navbar {
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: flex-end; /* ให้ปุ่มอยู่ทางขวา */
+            align-items: center;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            background-color: #555;
+            border-radius: 5px;
+        }
+        .gallery-container {
+            max-width: 800px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 80px 20px 20px; /* เพิ่ม padding ด้านบนเพื่อไม่ให้ชน navbar */
+            justify-content: center; /* จัดรูปภาพให้ตรงกลาง */
+        }
+        .gallery-item {
+            width: calc(33.33% - 10px);
+            cursor: pointer;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1001;
+        }
+        .modal img {
+            width: 90%;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .modal:target {
+            display: flex;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .nav-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .nav-buttons a {
+            font-size: 24px;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="index.html">Back to Home</a>
+    </div>
+
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <a href="#modal1"><img src="image/cs.jpg" alt="Project 1"></a>
+        </div>
+        <div class="gallery-item">
+            <a href="#modal2"><img src="image/ctf.jpg" alt="Project 2"></a>
+        </div>
+        <div class="gallery-item">
+            <a href="#modal3"><img src="image/hpe.jpg" alt="Project 3"></a>
+        </div>
+        <div class="gallery-item">
+            <a href="#modal4"><img src="image/py.jpg" alt="Project 4"></a>
+        </div>
+    </div>
+
+    <!-- Modals for each image -->
+    <div class="modal" id="modal1">
+        <a href="#" class="close">&times;</a>
+        <div class="nav-buttons">
+            <a href="#modal4">&#10094;</a>
+            <a href="#modal2">&#10095;</a>
+        </div>
+        <img src="image/cs.jpg" alt="Project 1">
+    </div>
+    <div class="modal" id="modal2">
+        <a href="#" class="close">&times;</a>
+        <div class="nav-buttons">
+            <a href="#modal1">&#10094;</a>
+            <a href="#modal3">&#10095;</a>
+        </div>
+        <img src="image/ctf.jpg" alt="Project 2">
+    </div>
+    <div class="modal" id="modal3">
+        <a href="#" class="close">&times;</a>
+        <div class="nav-buttons">
+            <a href="#modal2">&#10094;</a>
+            <a href="#modal4">&#10095;</a>
+        </div>
+        <img src="image/hpe.jpg" alt="Project 3">
+    </div>
+    <div class="modal" id="modal4">
+        <a href="#" class="close">&times;</a>
+        <div class="nav-buttons">
+            <a href="#modal3">&#10094;</a>
+            <a href="#modal1">&#10095;</a>
+        </div>
+        <img src="image/py.jpg" alt="Project 4">
+    </div>
+</body>
+</html>

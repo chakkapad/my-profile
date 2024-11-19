@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: right;
+            display: block;
+            color: #f4f4f9;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .bio,
+        .skills,
+        .contact {
+            margin: 20px 0;
+            padding: 15px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .skills ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .skills li {
+            background: #e1e1e1;
+            display: inline-block;
+            padding: 8px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+
+        /* จัดการแสดงผลของ gallery */
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            /* ให้รูปภาพจัดเรียงต่อกันอัตโนมัติ */
+            gap: 10px;
+            /* ระยะห่างระหว่างรูปภาพ */
+            justify-content: center;
+            /* จัดกึ่งกลาง */
+            padding: 20px;
+        }
+
+        /* จัดขนาดและการแสดงผลของ gallery-item */
+        .gallery-item {
+            width: 200vh;
+            /* กำหนดขนาดรูปภาพ */
+            overflow: hidden;
+            /* ตัดส่วนเกินออก */
+            border-radius: 10px;
+            /* มุมโค้ง */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            /* เงา */
+            transition: transform 0.3s ease;
+            /* เอฟเฟกต์เวลา hover */
+        }
+
+        /* จัดการขนาดรูปภาพให้เต็มกรอบ gallery-item */
+        .gallery-item img {
+            width: 100%;
+            /* ให้รูปภาพพอดีกับความกว้างของกรอบ */
+            height: auto;
+            /* ปรับตามอัตราส่วน */
+            display: block;
+        }
+
+        /* เพิ่มเอฟเฟกต์เมื่อ hover */
+        .gallery-item:hover {
+            transform: scale(1.05);
+            /* ขยายเล็กน้อยเมื่อชี้ */
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+            /* เพิ่มเงา */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="#about">About Me</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <div class="button-container">
+            <a href="mywork.html" class="work-button">certificate</a>
+            <a href="pictures.html" class="pictures-button">Pictures</a>
+        </div>
+    </div>
+    
+
+    <div class="container">
+        <h1>จักรพรรดิ์ อนุไพร</h1>
+        <img src="image\DSC_0615.jpg" alt="Profile Picture" class="profile-image">
+
+        <div id="about" class="bio">
+            <h2>About Me</h2>
+            <p>สวัสดีครับผม นายจักรพรรดิ์ อนุไพร อายุ 21 กำลังศึกษาระดับปริญญาตรีตรี ปีที่ 4 <br>เรียนที่มหวิทยาลัยขอนแก่นวิยาเขตหนองคาย คณะสหวิทยาการ สาขาวิทยาการคอมพิวเตอร์และสารสนเทศ</p>
+        </div>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <div id="skills" class="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li><i class="fab fa-html5"></i> HTML</li>
+                <li><i class="fab fa-css3-alt"></i> CSS</li>
+                <li><i class="fab fa-python"></i> Python</li>
+
+
+            </ul>
+        </div>
+
+        <div id="contact" class="contact">
+            <h2>Contact</h2>
+            <p>Email: chakkapad.a@kkumail.com</p>
+            <p>Phone: 0949595301</p>
+            <p>LinkedIn: <a href="https://web.facebook.com/profile.php?id=100011799663716&locale=th_TH">FaceBook</a></p>
+            <p>Github:<a href="https://github.com/chakkapad">การเรียนและโปรเจ็คต่างๆ</a></p>
+        </div>
+
+
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <a href="#modal1"><img src="image/re1.jpg" alt="resume"></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

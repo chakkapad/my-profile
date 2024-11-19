@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Gallery</title>
+    <style>
+        /* ==========================
+   Global Styles
+========================== */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* ==========================
+   Navbar Styles
+========================== */
+        .navbar {
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            background-color: #555;
+            border-radius: 5px;
+        }
+
+        /* ==========================
+   Gallery Container
+========================== */
+        .gallery-container,
+        .gallery-containertwo {
+            max-width: 1000px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 80px 20px 20px;
+            justify-content: center;
+        }
+
+        .gallery-item {
+            width: calc(33.33% - 10px);
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+
+        /* ==========================
+   Modal Styles
+========================== */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1001;
+        }
+
+        .modal img {
+            width: 90%;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal:target {
+            display: flex;
+        }
+
+        /* Close Button */
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Navigation Buttons */
+        .nav-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .nav-buttons a {
+            font-size: 24px;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+        }
+
+        /* ==========================
+   Text Section
+========================== */
+        p {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            margin: 0;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="index.html">Back to Home</a>
+    </div>
+
+    <p>รูปภาพของการฝึกงาน</p>
+
+    <div class="gallery-container">
+
+        <div class="gallery-item">
+            <a href="#modal1"><img src="imagework\1.jpeg" alt="Project 1"></a>
+        </div>
+        <div class="gallery-item">
+            <a href="#modal2"><img src="imagework\2.jpeg" alt="Project 2"></a>
+        </div>
+        <div class="gallery-item">
+            <a href="#modal3"><img src="imagework\3.jpeg" alt="Project 3"></a>
+        </div>
+        <div class="gallery-item">
+            <a href="#modal4"><img src="imagework\4.jpeg" alt="Project 4"></a>
+        </div>
+    </div>
+
+    <!-- Modals for each image -->
+    <div class="modal" id="modal1">
+        <a href="#" class="close">&times;</a>
+        <div class="nav-buttons">
+            <a href="#modal4">&#10094;</a>
+            <a href="#modal2">&#10095;</a>
+        </div>
+        <img src="imagework\1.jpeg" alt="Project 1">
+    </div>
+    <div class="modal" id="modal2">
+        <a href="#" class="close">&times;</a>
+        <div class="nav-buttons">
+            <a href="#modal1">&#10094;</a>
+            <a href="#modal3">&#10095;</a>
+        </div>
+        <img src="imagework\2.jpeg" alt="Project 2">
+    </div>
+    <div class="modal" id="modal3">
+        <a href="#" class="close">&times;</a>
+        <div class="nav-buttons">
+            <a href="#modal2">&#10094;</a>
+            <a href="#modal4">&#10095;</a>
+        </div>
+        <img src="imagework\3.jpeg" alt="Project 3">
+    </div>
+    <div class="modal" id="modal4">
+        <a href="#" class="close">&times;</a>
+        <div class="nav-buttons">
+            <a href="#modal3">&#10094;</a>
+            <a href="#modal1">&#10095;</a>
+        </div>
+        <img src="imagework\4.jpeg" alt="Project 4">
+    </div>
+
+    <div>
+        <p>รูปจากการเรียนและผลงาน</p>
+    </div>
+
+    <div class="gallery-containertwo">
+        <div class="gallery-item">
+            <!-- ใช้ id ใหม่สำหรับ modal ของ poster -->
+            <a href="#modalPoster"><img src="imagework\poster.png" alt="Poster Image"></a>
+        </div>
+    </div>
+    
+    <div class="modal" id="modalPoster">
+        <a href="#" class="close">&times;</a>
+        <div class="nav-buttons">
+            <!-- Navigation ปรับให้เชื่อมโยง modal ที่เหมาะสม -->
+            <a href="#modal4">&#10094;</a>
+            <a href="#modal2">&#10095;</a>
+        </div>
+        <!-- แก้ไขรูปให้แสดง poster.png -->
+        <img src="imagework\poster.png" alt="Poster Image">
+    </div>
+    
+    
+
+
+</body>
+
+</html>
